@@ -13,7 +13,7 @@ class TVMazeAPI:
     def _create_show_obj(self, data):
         show_id = data['id']
         title = data['name']
-        img = data['image']['medium'] if data['image'] else None
+        img = data['image']['original'] if data['image'] else None
         summary = data['summary']
         network = data['network']['name']
         show = TVShow(show_id, title, img, summary, network)

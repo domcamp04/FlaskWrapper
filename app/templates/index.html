@@ -16,7 +16,20 @@
 </form>
 
 {% if show_list %}
-    {{ show_list }}
+<div class="row">
+    {% for show in show_list %}
+        <div class="col-6 col-md-4">
+            <div class="card">
+                <img src="{{ show.image }}" class="card-img-top" alt="{{ show.title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ show.title }}</h5>
+                    <p class="card-text">{{ show.summary|striptags }}</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
 {% endif %}
 
 {% endblock content %}
